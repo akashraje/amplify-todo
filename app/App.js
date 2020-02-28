@@ -10,14 +10,10 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  TextInput,
-  Button,
-  Alert,
+  StatusBar
 } from 'react-native';
+
+import Home from './components/Home/Home.component.js'
 
 import {
   Header,
@@ -32,22 +28,8 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView style= {{backgroundColor:Colors.lighter}} >
-      <View
-          style = {
-            { flexDirection:'row'}}>
-        <TextInput
-            style = {{flexGrow:1}}
-            editable = {true}/>
-        <Button
-          style = {{flexGrow:1}}
-          title = "Add"
-          onPress = { () => {
-                  Alert.alert('Button Pressed')
-              }
-            }/>
-      </View>
-
+      <SafeAreaView style= {{backgroundColor:Colors.green}} >
+          <Home/>
       </SafeAreaView>
     </>
   );
