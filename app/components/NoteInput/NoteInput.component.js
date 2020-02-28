@@ -12,7 +12,7 @@ import styles from '../../Styles/NoteInput/NoteInput.components.style.js'
 
 class NoteInput extends Component {
   state = {
-    text : ''
+    inputTxt : ''
   }
 
   render() {
@@ -26,26 +26,22 @@ class NoteInput extends Component {
         {...extraProps}
         style = { [styles.textInputStyle, extraProps.style] }
         editable =  { true }
-        onChageText = { text => {
-            console.log(text)
-            this.setState({text})
-          }
+        onChangeText = { text =>  {
+          this.setState({inputTxt: text})
         }
+       }
       />
 
       <Button
         flexGrow = {1}
         title = "Add"
         onPress = { () => {
-              console.log("tasdasdext")
-              Alert.alert(this.state.text)
+              Alert.alert(this.state.inputTxt)
             }
           }
       />
 
       </View>
-
-
     )
   }
 }
